@@ -382,8 +382,45 @@ h3 {
 
 .focus-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.achievement-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+  min-height: 150px;
+}
+
+.achievement-card span {
+  display: block;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 720;
+  margin-bottom: 12px;
+}
+
+.achievement-card strong {
+  display: block;
+  line-height: 1.15;
+  font-size: 1.2rem;
+}
+
+.achievement-card p {
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+.compact-list {
+  margin-top: 0;
 }
 
 .focus-item,
@@ -480,6 +517,70 @@ h3 {
   background: var(--surface-muted);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
+}
+
+
+.visual-orbital {
+  display: grid;
+  place-items: center;
+}
+
+.visual-orbital::before,
+.visual-orbital::after {
+  content: "";
+  position: absolute;
+  width: 118px;
+  height: 118px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.75;
+}
+
+.visual-orbital::after {
+  width: 74px;
+  height: 74px;
+  border-color: var(--warm);
+  transform: rotate(35deg) scaleX(1.35);
+}
+
+.visual-orbital span {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.visual-orbital span:nth-child(1) {
+  transform: translate(-52px, -18px);
+}
+
+.visual-orbital span:nth-child(2) {
+  transform: translate(12px, 46px);
+  background: var(--accent);
+}
+
+.visual-orbital span:nth-child(3) {
+  transform: translate(58px, -30px);
+  background: var(--warm);
+}
+
+
+
+.project-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.visual-qmc,
+.visual-orbital-mini,
+.visual-ring-current,
+.visual-pes,
+.visual-synthesis {
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--accent-soft) 34%, transparent), transparent 52%),
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-muted) 82%, transparent), var(--surface-muted));
 }
 
 .visual-model::before,
@@ -691,6 +792,7 @@ h3 {
 
   .profile-meta,
   .focus-grid,
+  .achievement-grid,
   .project-grid {
     grid-template-columns: 1fr;
   }
