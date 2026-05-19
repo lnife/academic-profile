@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic portfolio showcasing education, research interests, selected projects, and contact information.">
+  <title>Your Name | Academic Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#profile" aria-label="Home">Your Name</a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="#profile">Profile</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+          <span class="theme-mark" aria-hidden="true"></span>
+        </button>
+        <button class="icon-button nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="profile-section section-band" id="profile">
+      <div class="section-inner profile-grid">
+        <div class="profile-copy">
+          <p class="eyebrow">Academic Portfolio</p>
+          <h1>Your Name</h1>
+          <p class="lead">
+            Student researcher focused on computational science, data-driven analysis,
+            and clear scientific communication.
+          </p>
+          <div class="profile-meta" aria-label="Academic summary">
+            <div>
+              <span>Current Role</span>
+              <strong>Undergraduate Researcher</strong>
+            </div>
+            <div>
+              <span>Field</span>
+              <strong>Computer Science / Chemistry</strong>
+            </div>
+            <div>
+              <span>Location</span>
+              <strong>City, Country</strong>
+            </div>
+          </div>
+          <div class="action-row">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <figure class="academic-visual" aria-label="Research network visualization">
+          <canvas id="research-canvas"></canvas>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-band" id="education">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Education</p>
+          <h2>Academic Background</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2024 - Present</div>
+            <div class="timeline-content">
+              <h3>Bachelor of Science in Your Major</h3>
+              <p class="institution">Your University Name</p>
+              <p>
+                Focused coursework in algorithms, scientific computing, statistics,
+                molecular modeling, and research methods.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2023 - 2024</div>
+            <div class="timeline-content">
+              <h3>Research Preparation and Independent Study</h3>
+              <p class="institution">Department or Lab Name</p>
+              <p>
+                Built foundations in literature review, reproducible workflows,
+                experimental design, and technical writing.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band muted-band" id="research">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2>Interests and Methods</h2>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-item">
+            <h3>Computational Modeling</h3>
+            <p>
+              Building interpretable simulations that connect mathematical models
+              with observable scientific behavior.
+            </p>
+          </article>
+
+          <article class="focus-item">
+            <h3>Data Analysis</h3>
+            <p>
+              Cleaning, exploring, and visualizing research data with attention to
+              reproducibility and uncertainty.
+            </p>
+          </article>
+
+          <article class="focus-item">
+            <h3>Scientific Communication</h3>
+            <p>
+              Turning technical results into clear figures, concise writing, and
+              presentations for academic audiences.
+            </p>
+          </article>
+        </div>
+
+        <div class="publication-list">
+          <h3>Selected Academic Work</h3>
+          <ul>
+            <li>
+              <span>Poster</span>
+              <p>Title of your research poster or class presentation, Conference or Course, 2026.</p>
+            </li>
+            <li>
+              <span>Manuscript</span>
+              <p>Working title of your paper, preprint, thesis, or capstone project.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" id="projects">
+      <div class="section-inner">
+        <div class="section-heading project-heading">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>Selected Academic Projects</h2>
+          </div>
+
+          <div class="filter-group" aria-label="Project filters">
+            <button class="filter-button active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="research">Research</button>
+            <button class="filter-button" type="button" data-filter="data">Data</button>
+            <button class="filter-button" type="button" data-filter="software">Software</button>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-category="research software">
+            <div class="project-visual visual-model" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">Research Tool</p>
+              <h3>Nonadiabatic Coupling Playground</h3>
+              <p>
+                Educational Python model for visualizing avoided crossings,
+                derivative coupling, electronic populations, and simplified
+                surface hopping.
+              </p>
+              <div class="tag-row">
+                <span>Python</span>
+                <span>Scientific Computing</span>
+                <span>Visualization</span>
+              </div>
+              <a href="#" class="text-link">View project</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="data research">
+            <div class="project-visual visual-data" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">Data Study</p>
+              <h3>Research Dataset Analysis</h3>
+              <p>
+                A reproducible analysis workflow for cleaning raw measurements,
+                comparing trends, and generating publication-ready figures.
+              </p>
+              <div class="tag-row">
+                <span>Statistics</span>
+                <span>Visualization</span>
+                <span>Methods</span>
+              </div>
+              <a href="#" class="text-link">View project</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="software">
+            <div class="project-visual visual-system" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-body">
+              <p class="project-type">Software Project</p>
+              <h3>Academic Workflow App</h3>
+              <p>
+                Minimal tool for organizing notes, literature references,
+                experiment logs, and project milestones in one structured view.
+              </p>
+              <div class="tag-row">
+                <span>JavaScript</span>
+                <span>Interface Design</span>
+                <span>Productivity</span>
+              </div>
+              <a href="#" class="text-link">View project</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band contact-section muted-band" id="contact">
+      <div class="section-inner contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Academic Contact</h2>
+          <p>
+            Available for research conversations, academic opportunities, and
+            project collaboration.
+          </p>
+        </div>
+
+        <div class="contact-panel">
+          <a href="mailto:your.email@example.com">your.email@example.com</a>
+          <a href="#" aria-label="Open curriculum vitae">Curriculum Vitae</a>
+          <a href="#" aria-label="Open academic profile">Academic Profile</a>
+          <button class="copy-email" type="button" data-email="your.email@example.com">Copy Email</button>
+          <p class="copy-status" id="copy-status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>(c) <span id="year"></span> Your Name. Academic portfolio.</p>
+      <a href="#profile">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
