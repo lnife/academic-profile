@@ -1,275 +1,385 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic portfolio showcasing education, research interests, selected projects, and contact information.">
-  <title>Your Name | Academic Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Academic portfolio of Bhaskar Malviya, computational chemistry researcher focused on electronic structure theory, current-density analysis, and scientific computing."
+    />
+    <title>Bhaskar Malviya | Academic Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="nav-shell">
-      <a class="wordmark" href="#profile" aria-label="Home">Your Name</a>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="wordmark" href="#profile" aria-label="Home">Bhaskar Malviya</a>
 
-      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <nav
+          class="primary-nav"
+          id="primary-nav"
+          aria-label="Primary navigation"
+        >
+          <a href="#profile">Profile</a>
+          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <div class="header-actions">
-        <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
-          <span class="theme-mark" aria-hidden="true"></span>
-        </button>
-        <button class="icon-button nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
+        <div class="header-actions">
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <span class="theme-mark" aria-hidden="true"></span>
+          </button>
+          <button
+            class="icon-button nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Open navigation"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main id="main">
-    <section class="profile-section section-band" id="profile">
-      <div class="section-inner profile-grid">
-        <div class="profile-copy">
-          <p class="eyebrow">Academic Portfolio</p>
-          <h1>Your Name</h1>
-          <p class="lead">
-            Student researcher focused on computational science, data-driven analysis,
-            and clear scientific communication.
-          </p>
-          <div class="profile-meta" aria-label="Academic summary">
-            <div>
-              <span>Current Role</span>
-              <strong>Undergraduate Researcher</strong>
+    <main id="main">
+      <section class="profile-section section-band" id="profile">
+        <div class="section-inner profile-grid">
+          <div class="profile-copy">
+            <p class="eyebrow">Academic Portfolio</p>
+            <h1>lnifelias stargarden</h1>
+            <p class="lead">
+              Computational chemistry researcher focused on electronic structure
+              theory, magnetically induced current-density analysis, and
+              scientific computing workflows.
+            </p>
+            <div class="profile-meta" aria-label="Academic summary">
+              <div>
+                <span>Real Name</span>
+                <strong>Bhaskar Malviya</strong>
+              </div>
+              <div>
+                <span>Field</span>
+                <strong>Computational Quantum Chemistry</strong>
+              </div>
+              <div>
+                <span>Location</span>
+                <strong>India</strong>
+              </div>
             </div>
-            <div>
-              <span>Field</span>
-              <strong>Computer Science / Chemistry</strong>
-            </div>
-            <div>
-              <span>Location</span>
-              <strong>City, Country</strong>
+            <div class="action-row">
+              <a class="button primary" href="#projects">View Projects</a>
+              <a class="button secondary" href="#contact">Contact</a>
             </div>
           </div>
-          <div class="action-row">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button secondary" href="#contact">Contact</a>
+
+          <figure
+            class="academic-visual"
+            aria-label="Research network visualization"
+          >
+            <canvas id="research-canvas"></canvas>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section-band" id="education">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Education</p>
+            <h2>Academic Background</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">Aug 2023 - Aug 2025</div>
+              <div class="timeline-content">
+                <h3>M.Sc. Chemistry</h3>
+                <p class="institution">Indian Institute of Technology Madras</p>
+                <p>
+                  Specialized in computational quantum chemistry. Master's thesis:
+                  <em>Investigating Aromaticity via Magnetically Induced Current Density</em>,
+                  supervised by Dr. Krishna R. Nandipati.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">Aug 2019 - May 2022</div>
+              <div class="timeline-content">
+                <h3>B.Sc. (Honors) Chemistry</h3>
+                <p class="institution">
+                  Institute for Excellence in Higher Education, Bhopal
+                </p>
+                <p>
+                  Built a foundation in chemistry before moving toward
+                  theoretical, computational, and quantum-chemical research.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        <figure class="academic-visual" aria-label="Research network visualization">
-          <canvas id="research-canvas"></canvas>
-        </figure>
-      </div>
-    </section>
+      <section class="section-band muted-band" id="research">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Research</p>
+            <h2>Interests and Methods</h2>
+          </div>
 
-    <section class="section-band" id="education">
-      <div class="section-inner">
-        <div class="section-heading">
-          <p class="eyebrow">Education</p>
-          <h2>Academic Background</h2>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">2024 - Present</div>
-            <div class="timeline-content">
-              <h3>Bachelor of Science in Your Major</h3>
-              <p class="institution">Your University Name</p>
+          <div class="focus-grid">
+            <article class="focus-item">
+              <h3>Electronic Structure Theory</h3>
               <p>
-                Focused coursework in algorithms, scientific computing, statistics,
-                molecular modeling, and research methods.
+                Density functional theory, NMR shielding tensors, GIAO-based
+                response properties, and aromaticity analysis through
+                magnetically induced current densities.
               </p>
-            </div>
-          </article>
+            </article>
 
-          <article class="timeline-item">
-            <div class="timeline-date">2023 - 2024</div>
-            <div class="timeline-content">
-              <h3>Research Preparation and Independent Study</h3>
-              <p class="institution">Department or Lab Name</p>
+            <article class="focus-item">
+              <h3>Scientific Computing</h3>
               <p>
-                Built foundations in literature review, reproducible workflows,
-                experimental design, and technical writing.
+                Python, Rust, PyTorch, shell scripting, automation of
+                computational workflows, Monte Carlo sampling, and reproducible
+                data processing.
               </p>
+            </article>
+
+            <article class="focus-item">
+              <h3>Molecular Simulation</h3>
+              <p>
+                Practical exposure to GROMACS molecular dynamics workflows,
+                aqueous electrolyte simulations, ionic coordination analysis,
+                and basic Schrödinger/Maestro docking workflows.
+              </p>
+            </article>
+          </div>
+
+          <div class="publication-list">
+            <h3>Selected Academic Work</h3>
+            <ul>
+              <li>
+                <span>Master's Thesis</span>
+                <p>
+                  Investigated aromatic, antiaromatic, and non-aromatic
+                  π-systems using ωB97X-D/cc-pVQZ calculations with Gaussian,
+                  ORCA, and GIMIC.
+                </p>
+              </li>
+              <li>
+                <span>Solvent Effects</span>
+                <p>
+                  Evaluated benzene aromaticity across 13 solvents using the SMD
+                  implicit solvation model and observed systematic enhancement of
+                  diatropic current with increasing solvent polarity.
+                </p>
+              </li>
+              <li>
+                <span>Exploratory Study</span>
+                <p>
+                  Worked on vibronic coupling Hamiltonian modeling for
+                  excited-state acetylene photochemistry, including exposure to
+                  Jahn-Teller and pseudo-Jahn-Teller interactions.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" id="projects">
+        <div class="section-inner">
+          <div class="section-heading project-heading">
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2>Selected Computational Projects</h2>
             </div>
-          </article>
+
+            <div class="filter-group" aria-label="Project filters">
+              <button
+                class="filter-button active"
+                type="button"
+                data-filter="all"
+              >
+                All
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="research"
+              >
+                Research
+              </button>
+              <button class="filter-button" type="button" data-filter="data">
+                Data
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="software"
+              >
+                Software
+              </button>
+            </div>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-category="research software">
+              <div class="project-visual visual-model" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-body">
+                <p class="project-type">Quantum Simulation Prototype</p>
+                <h3>Neural QMC / Helium VMC</h3>
+                <p>
+                  Python/PyTorch variational Monte Carlo-style prototype using
+                  walkers, Metropolis sampling, a neural trial wavefunction,
+                  Jastrow correlation, and autograd-based local-energy estimates.
+                </p>
+                <div class="tag-row">
+                  <span>Python</span>
+                  <span>PyTorch</span>
+                  <span>Monte Carlo</span>
+                </div>
+                <a
+                  href="https://github.com/lnife/NeuralQMC"
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card" data-category="data research software">
+              <div class="project-visual visual-data" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-body">
+                <p class="project-type">Scientific Visualization</p>
+                <h3>Electron Cloud Simulator</h3>
+                <p>
+                  Rust-based hydrogenic orbital probability-density visualizer
+                  using analytical wavefunction components, Monte Carlo
+                  sampling, spherical-to-Cartesian conversion, and 3D rendering.
+                </p>
+                <div class="tag-row">
+                  <span>Rust</span>
+                  <span>Orbitals</span>
+                  <span>Visualization</span>
+                </div>
+                <a
+                  href="https://github.com/lnife/Electron-Cloud"
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View project</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card" data-category="research data software">
+              <div class="project-visual visual-system" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-body">
+                <p class="project-type">Computational Chemistry Workflow</p>
+                <h3>Gaussian / GIMIC Automation</h3>
+                <p>
+                  Python and shell-based automation for electronic-structure
+                  calculations, GIMIC current-density analysis, large-scale data
+                  processing, and visualization preparation.
+                </p>
+                <div class="tag-row">
+                  <span>Gaussian</span>
+                  <span>ORCA</span>
+                  <span>GIMIC</span>
+                </div>
+                <a
+                  href="https://github.com/lnife"
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View GitHub</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section-band muted-band" id="research">
-      <div class="section-inner">
-        <div class="section-heading">
-          <p class="eyebrow">Research</p>
-          <h2>Interests and Methods</h2>
-        </div>
-
-        <div class="focus-grid">
-          <article class="focus-item">
-            <h3>Computational Modeling</h3>
-            <p>
-              Building interpretable simulations that connect mathematical models
-              with observable scientific behavior.
-            </p>
-          </article>
-
-          <article class="focus-item">
-            <h3>Data Analysis</h3>
-            <p>
-              Cleaning, exploring, and visualizing research data with attention to
-              reproducibility and uncertainty.
-            </p>
-          </article>
-
-          <article class="focus-item">
-            <h3>Scientific Communication</h3>
-            <p>
-              Turning technical results into clear figures, concise writing, and
-              presentations for academic audiences.
-            </p>
-          </article>
-        </div>
-
-        <div class="publication-list">
-          <h3>Selected Academic Work</h3>
-          <ul>
-            <li>
-              <span>Poster</span>
-              <p>Title of your research poster or class presentation, Conference or Course, 2026.</p>
-            </li>
-            <li>
-              <span>Manuscript</span>
-              <p>Working title of your paper, preprint, thesis, or capstone project.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-band" id="projects">
-      <div class="section-inner">
-        <div class="section-heading project-heading">
+      <section class="section-band contact-section muted-band" id="contact">
+        <div class="section-inner contact-grid">
           <div>
-            <p class="eyebrow">Projects</p>
-            <h2>Selected Academic Projects</h2>
+            <p class="eyebrow">Contact</p>
+            <h2>Academic Contact</h2>
+            <p>
+              Bhaskar Malviya is available for research conversations, PhD
+              opportunities, scientific computing collaborations, and
+              computational chemistry discussions.
+            </p>
           </div>
 
-          <div class="filter-group" aria-label="Project filters">
-            <button class="filter-button active" type="button" data-filter="all">All</button>
-            <button class="filter-button" type="button" data-filter="research">Research</button>
-            <button class="filter-button" type="button" data-filter="data">Data</button>
-            <button class="filter-button" type="button" data-filter="software">Software</button>
+          <div class="contact-panel">
+            <a href="mailto:bhaskaremalviya@protonmail.com"
+              >bhaskaremalviya@protonmail.com</a
+            >
+            <a href="mailto:lnifelias@alumni.iitm.ac.in"
+              >lnifelias@alumni.iitm.ac.in</a
+            >
+            <a
+              href="https://github.com/lnife"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile"
+              >GitHub: github.com/lnife</a
+            >
+            <a
+              href="https://linkedin.com/in/bhaskar-malviya"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open LinkedIn profile"
+              >LinkedIn: bhaskar-malviya</a
+            >
+            <button
+              class="copy-email"
+              type="button"
+              data-email="bhaskaremalviya@protonmail.com"
+            >
+              Copy Email
+            </button>
+            <p class="copy-status" id="copy-status" aria-live="polite"></p>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="project-grid">
-          <article class="project-card" data-category="research software">
-            <div class="project-visual visual-model" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Research Tool</p>
-              <h3>Nonadiabatic Coupling Playground</h3>
-              <p>
-                Educational Python model for visualizing avoided crossings,
-                derivative coupling, electronic populations, and simplified
-                surface hopping.
-              </p>
-              <div class="tag-row">
-                <span>Python</span>
-                <span>Scientific Computing</span>
-                <span>Visualization</span>
-              </div>
-              <a href="#" class="text-link">View project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="data research">
-            <div class="project-visual visual-data" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Data Study</p>
-              <h3>Research Dataset Analysis</h3>
-              <p>
-                A reproducible analysis workflow for cleaning raw measurements,
-                comparing trends, and generating publication-ready figures.
-              </p>
-              <div class="tag-row">
-                <span>Statistics</span>
-                <span>Visualization</span>
-                <span>Methods</span>
-              </div>
-              <a href="#" class="text-link">View project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="software">
-            <div class="project-visual visual-system" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="project-body">
-              <p class="project-type">Software Project</p>
-              <h3>Academic Workflow App</h3>
-              <p>
-                Minimal tool for organizing notes, literature references,
-                experiment logs, and project milestones in one structured view.
-              </p>
-              <div class="tag-row">
-                <span>JavaScript</span>
-                <span>Interface Design</span>
-                <span>Productivity</span>
-              </div>
-              <a href="#" class="text-link">View project</a>
-            </div>
-          </article>
-        </div>
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <p>(c) <span id="year"></span> Bhaskar Malviya. Academic portfolio.</p>
+        <a href="#profile">Back to top</a>
       </div>
-    </section>
-
-    <section class="section-band contact-section muted-band" id="contact">
-      <div class="section-inner contact-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Academic Contact</h2>
-          <p>
-            Available for research conversations, academic opportunities, and
-            project collaboration.
-          </p>
-        </div>
-
-        <div class="contact-panel">
-          <a href="mailto:your.email@example.com">your.email@example.com</a>
-          <a href="#" aria-label="Open curriculum vitae">Curriculum Vitae</a>
-          <a href="#" aria-label="Open academic profile">Academic Profile</a>
-          <button class="copy-email" type="button" data-email="your.email@example.com">Copy Email</button>
-          <p class="copy-status" id="copy-status" aria-live="polite"></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="section-inner footer-inner">
-      <p>(c) <span id="year"></span> Your Name. Academic portfolio.</p>
-      <a href="#profile">Back to top</a>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

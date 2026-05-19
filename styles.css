@@ -37,7 +37,9 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  scroll-padding-top: 88px;
+  overflow-anchor: none;
 }
 
 body {
@@ -48,6 +50,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0;
+  overflow-x: hidden;
 }
 
 body.nav-open {
@@ -232,8 +235,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3rem, 4.8rem, 5rem);
-  max-width: 10ch;
+  font-size: clamp(3rem, 7vw, 5rem);
+  max-width: 13ch;
 }
 
 h2 {
@@ -321,7 +324,8 @@ h3 {
 
 .academic-visual {
   position: relative;
-  min-height: 430px;
+  height: clamp(430px, 58vh, 620px);
+  min-height: 0;
   margin: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -330,12 +334,13 @@ h3 {
     var(--surface);
   box-shadow: var(--shadow);
   overflow: hidden;
+  contain: layout paint;
 }
 
 .academic-visual canvas {
   width: 100%;
   height: 100%;
-  min-height: 430px;
+  min-height: 0;
 }
 
 .section-heading {
@@ -697,6 +702,10 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
   .nav-shell {
     min-height: 64px;
   }
@@ -755,6 +764,10 @@ h3 {
 }
 
 @media (max-width: 520px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
   .section-inner,
   .nav-shell {
     width: min(100% - 24px, var(--max-width));

@@ -1,10 +1,12 @@
 # Academic Profile Website
 
-This is my personal academic profile website built to showcase my academic background, research interests, technical skills, and selected projects.
+Personal academic portfolio website for **Bhaskar Malviya**.
+
+The main landing-page display name is intentionally kept as **lnifelias stargarden**. Everywhere else, the site uses the real name **Bhaskar Malviya**.
 
 ## Live Website
 
-[Visit my academic profile website](https://lnife.github.io/academic-profile/)
+[Visit the academic profile website](https://lnife.github.io/academic-profile/)
 
 ## Repository
 
@@ -12,20 +14,17 @@ This is my personal academic profile website built to showcase my academic backg
 
 ## Purpose
 
-The website is designed as a clean online profile for academic and research-related use. It can be shared with professors, research groups, universities, collaborators, and anyone interested in my academic work.
+This website presents Bhaskar Malviya's academic background, research interests, computational chemistry experience, scientific computing projects, and contact information for research and PhD-related communication.
 
-## What the Website Includes
+## Profile Highlights
 
-- Academic background
-- Research interests
-- Projects
-- Technical skills
-- Contact information
-- Links to relevant profiles and work
+- M.Sc. Chemistry, Indian Institute of Technology Madras
+- Specialization in computational quantum chemistry
+- Master's thesis on magnetically induced current-density analysis of aromatic, antiaromatic, and non-aromatic systems
+- Experience with Gaussian, ORCA, GIMIC, Python, Rust, PyTorch, shell scripting, GROMACS, and Schrödinger/Maestro
+- Independent projects in neural VMC-style quantum simulation and hydrogenic orbital visualization
 
 ## Tech Stack
-
-This website is built using:
 
 - HTML
 - CSS
@@ -33,23 +32,39 @@ This website is built using:
 
 ## Project Structure
 
+```text
 academic-profile/
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── .nojekyll
 ├── index.html
 ├── styles.css
 ├── script.js
 └── README.md
+```
 
-## Future Improvements
+## Local Preview
 
-Possible future updates include:
+Open `index.html` directly in a browser, or run a small local server:
 
-- Adding more academic projects
-- Adding a publication or thesis section
-- Improving mobile responsiveness
-- Adding downloadable CV
-- Adding research project pages
-- Improving accessibility and SEO
+```bash
+python3 -m http.server 8000
+```
 
-## License
+Then visit `http://localhost:8000`.
 
-This project is currently for personal academic use.
+## Deployment
+
+For GitHub Pages, keep `index.html`, `styles.css`, and `script.js` in the
+repository root. In the repository settings, enable Pages from the `main`
+branch and use the root folder.
+
+## Notes
+
+The JavaScript has been adjusted to avoid unwanted hash-link jumps, reduce scroll/resize glitches from the animated canvas, and prevent mobile navigation from leaving the page scroll-locked.
+
+
+## Stable scroll fix
+
+This version fixes the earlier automatic downward scrolling by giving the canvas container a fixed responsive height and resizing the drawing buffer from `clientWidth/clientHeight` instead of the border-box size. This prevents a ResizeObserver feedback loop where the canvas kept making its parent taller.

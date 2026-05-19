@@ -12,34 +12,106 @@ const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const storedTheme = localStorage.getItem("portfolio-theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function removeStoredSectionHash() {
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+}
+
+function forceTopOnInitialLoad() {
+  removeStoredSectionHash();
+  window.scrollTo(0, 0);
+}
+
+forceTopOnInitialLoad();
+window.addEventListener("load", () => {
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+  window.setTimeout(() => window.scrollTo(0, 0), 80);
+});
+
 if (storedTheme) {
   root.dataset.theme = storedTheme;
 } else if (prefersDark) {
   root.dataset.theme = "dark";
 }
 
-year.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
-navToggle.addEventListener("click", () => {
-  const isOpen = document.body.classList.toggle("nav-open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-});
+function closeNav() {
+  document.body.classList.remove("nav-open");
 
-primaryNav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    document.body.classList.remove("nav-open");
+  if (navToggle) {
     navToggle.setAttribute("aria-expanded", "false");
     navToggle.setAttribute("aria-label", "Open navigation");
   }
+}
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = document.body.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  });
+}
+
+if (primaryNav) {
+  primaryNav.addEventListener("click", (event) => {
+    if (event.target.matches("a")) {
+      closeNav();
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeNav();
+  }
 });
 
-themeToggle.addEventListener("click", () => {
-  const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-  root.dataset.theme = nextTheme;
-  localStorage.setItem("portfolio-theme", nextTheme);
-  startCanvas();
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 760) {
+    closeNav();
+  }
 });
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const href = anchor.getAttribute("href");
+
+    if (!href || href === "#") {
+      event.preventDefault();
+      return;
+    }
+
+    const target = document.querySelector(href);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({
+      behavior: "auto",
+      block: "start"
+    });
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  });
+});
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = nextTheme;
+    localStorage.setItem("portfolio-theme", nextTheme);
+    startCanvas();
+  });
+}
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -56,20 +128,22 @@ filterButtons.forEach((button) => {
   });
 });
 
-copyEmailButton.addEventListener("click", async () => {
-  const email = copyEmailButton.dataset.email;
+if (copyEmailButton && copyStatus) {
+  copyEmailButton.addEventListener("click", async () => {
+    const email = copyEmailButton.dataset.email;
 
-  try {
-    await navigator.clipboard.writeText(email);
-    copyStatus.textContent = "Email copied.";
-  } catch {
-    copyStatus.textContent = email;
-  }
+    try {
+      await navigator.clipboard.writeText(email);
+      copyStatus.textContent = "Email copied.";
+    } catch {
+      copyStatus.textContent = email;
+    }
 
-  window.setTimeout(() => {
-    copyStatus.textContent = "";
-  }, 2400);
-});
+    window.setTimeout(() => {
+      copyStatus.textContent = "";
+    }, 2400);
+  });
+}
 
 const navLinks = Array.from(document.querySelectorAll(".primary-nav a"));
 const sections = navLinks
@@ -94,8 +168,9 @@ const observer = new IntersectionObserver(
 sections.forEach((section) => observer.observe(section));
 
 const canvas = document.querySelector("#research-canvas");
-const context = canvas.getContext("2d");
-let animationFrame;
+const context = canvas ? canvas.getContext("2d") : null;
+let animationFrame = 0;
+let resizeFrame = 0;
 let startTime = performance.now();
 
 function colorValue(name) {
@@ -103,17 +178,31 @@ function colorValue(name) {
 }
 
 function resizeCanvas() {
-  const rect = canvas.parentElement.getBoundingClientRect();
-  const ratio = window.devicePixelRatio || 1;
+  if (!canvas || !context || !canvas.parentElement) {
+    return;
+  }
 
-  canvas.width = Math.max(1, Math.floor(rect.width * ratio));
-  canvas.height = Math.max(1, Math.floor(rect.height * ratio));
-  canvas.style.width = `${rect.width}px`;
-  canvas.style.height = `${rect.height}px`;
+  const width = Math.max(1, Math.floor(canvas.parentElement.clientWidth));
+  const height = Math.max(1, Math.floor(canvas.parentElement.clientHeight));
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  const nextWidth = Math.floor(width * ratio);
+  const nextHeight = Math.floor(height * ratio);
+
+  if (canvas.width !== nextWidth || canvas.height !== nextHeight) {
+    canvas.width = nextWidth;
+    canvas.height = nextHeight;
+  }
+
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
   context.setTransform(ratio, 0, 0, ratio, 0, 0);
 }
 
 function drawResearchVisual(timestamp) {
+  if (!canvas || !context) {
+    return;
+  }
+
   const rect = canvas.getBoundingClientRect();
   const width = rect.width;
   const height = rect.height;
@@ -231,14 +320,23 @@ function drawResearchVisual(timestamp) {
 }
 
 function startCanvas() {
+  if (!canvas || !context) {
+    return;
+  }
+
   window.cancelAnimationFrame(animationFrame);
   resizeCanvas();
   startTime = performance.now();
   animationFrame = window.requestAnimationFrame(drawResearchVisual);
 }
 
-const resizeObserver = new ResizeObserver(startCanvas);
-resizeObserver.observe(canvas.parentElement);
+if (canvas && canvas.parentElement) {
+  const resizeObserver = new ResizeObserver(() => {
+    window.cancelAnimationFrame(resizeFrame);
+    resizeFrame = window.requestAnimationFrame(resizeCanvas);
+  });
+  resizeObserver.observe(canvas.parentElement);
+}
 
 motionQuery.addEventListener("change", startCanvas);
 startCanvas();
